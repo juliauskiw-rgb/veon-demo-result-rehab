@@ -7,7 +7,7 @@ import Channels from "../components/Channels.astro";
   <section class="not-found">
     <div class="container">
       <h1>Такої сторінки немає</h1>
-      <p class="hero__lead">Поверніться на <a href="/">головну</a> або зв’яжіться з центром.</p>
+      <p class="hero__lead">Поверніться на <a href={import.meta.env.BASE_URL}>головну</a> або зв’яжіться з центром.</p>
       <Channels />
     </div>
   </section>
