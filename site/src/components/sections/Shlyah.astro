@@ -1,17 +1,16 @@
 ---
 import Section from "../Section.astro";
+import BlockHead from "../BlockHead.astro";
 import { stages } from "../../data/site";
 ---
 <Section id="shlyah" class="shlyah on-dark">
-  <div class="container shlyah__grid">
-    <h2>Як проходить реабілітація</h2>
+  <div class="container">
+    <BlockHead num="03" name="Як проходить" title="Як проходить реабілітація" lead="Чотири етапи. Програму коригують за потреби." />
     <ol class="stages">
-      {stages.map((s, i) => (
+      {stages.map((s) => (
         <li class="stage">
           <h3>{s.title}</h3>
           <p>{s.text}</p>
-          {i === 1 && <span class="stage__head" aria-hidden="true"></span>}
-          {i === 2 && <p class="stage__loop">Програму коригують за потреби</p>}
         </li>
       ))}
     </ol>

@@ -1,9 +1,12 @@
 /* Hallmark · shape: custom · genre: modern-minimal · theme: custom · job: book · idea: "Result не обещает результат, а показывает, из чего он складывается, — из дней: единица всего сайта — оплаченная доба и её содержимое" · vibe: "дневной свет, крупная речь, честный счёт"
- * paper: #8DC5FE · accent: #26326E · display: Arsenal · body: Commissioner · hero: заголовок на всю ширину на голубом поле, полоса 30 суток · nav: закреплённая тёмная шапка с номером · footer: тёмный, контакты и лицензия · imagery: client photos · signature: цена в клетках суток
+ * paper: #8DC5FE · accent: #26326E · display: Arsenal · body: Commissioner · hero: две колонки на голубом поле, предложение и панель Коротко, полоса 30 суток ниже · nav: закреплённая тёмная шапка с номером · footer: тёмный, контакты и лицензия · imagery: client photos · signature: цена в клетках суток
  * axes: mid/grotesk-sans/cool · posture: committed · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: imagery, снимки низкого разрешения показаны не шире исходника и только как лица команды */
 /* Hallmark · waive 39b · a.btn 56 and 60px · older visitors and stroke patients with impaired motor control need larger touch targets, set by concept section 8.5 */
 /* Hallmark · waive 23 · #8DC5FE field on top and kontakty · declared surface colour under the committed posture: the brand sky blue is the page field per concept section 5, it is not an accent */
+/* Hallmark · waive 82 · span.strip__grid 30 cells · the strip is the page signature from concept section 5: one cell per paid day of inpatient stay, the sum is always set in type beside it */
+/* Hallmark · waive 58 · Коротко panel beside the hero buttons · requested structural revision, concept section 8.13: the panel carries price and address next to the offer and sits after the buttons on phones */
+/* Hallmark · waive 49b · address link in the Коротко panel at 320px and 1024px · the street name is a real phrase that cannot be shortened, the panel column is narrow and the link keeps a 44px target */
 /* Line 1 of this file is the Hallmark stamp (docs/process/hallmark.md). Client design tokens from design/concept.md. */
 :root {
   /* Colour: veon-concept */
@@ -32,6 +35,7 @@
   --container: 1280px;
   --space: clamp(1.5rem, 5.5vw, 5rem);
   --gap: 8px;
+  --grid-gap: 24px;
   --cell-radius: 3px;
   --cell-line: 1.5px;
 
@@ -56,7 +60,7 @@
 }
 @media (min-width: 60rem) {
   :root {
-    --text-display: clamp(4.5rem, 7.5vw, 6.75rem);
+    --text-display: clamp(3.75rem, 5.9vw, 5.25rem);
     --text-section: clamp(2.75rem, 1.2rem + 3.4vw, 4rem);
     --header-h: 72px;
   }

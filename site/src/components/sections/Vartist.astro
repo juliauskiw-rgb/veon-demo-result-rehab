@@ -1,5 +1,6 @@
 ---
 import Section from "../Section.astro";
+import BlockHead from "../BlockHead.astro";
 import Channels from "../Channels.astro";
 import DayStrip from "../DayStrip.astro";
 import FutureLink from "../FutureLink.astro";
@@ -7,15 +8,14 @@ import { admissionFee, futureNote, included, outpatient, programmes, singleRoom 
 ---
 <Section id="vartist" class="vartist" rec="R-UX02">
   <div class="container">
-    <div class="vartist__head">
-      <h2>Що входить у добу і скільки коштує</h2>
-      <div class="price-tabs" role="tablist" aria-label="Формат реабілітації">
-        <button class="price-tab" type="button" role="tab" id="tab-inpatient" aria-selected="true" aria-controls="panel-inpatient">Стаціонар</button>
-        <button class="price-tab" type="button" role="tab" id="tab-outpatient" aria-selected="false" aria-controls="panel-outpatient" tabindex="-1">Амбулаторно</button>
-      </div>
+    <BlockHead num="02" name="Вартість" title="Що входить у добу і скільки коштує" lead="Заняття, кімната й харчування входять у ціну доби." />
+    <div class="price-tabs" role="tablist" aria-label="Формат реабілітації">
+      <button class="price-tab" type="button" role="tab" id="tab-inpatient" aria-selected="true" aria-controls="panel-inpatient">Стаціонар</button>
+      <button class="price-tab" type="button" role="tab" id="tab-outpatient" aria-selected="false" aria-controls="panel-outpatient" tabindex="-1">Амбулаторно</button>
     </div>
 
     <div id="panel-inpatient" class="price-panel is-active" role="tabpanel" aria-labelledby="tab-inpatient">
+      <div class="price-main">
       <div class="day-contents">
         <h3>У кожну добу входить</h3>
         <dl class="included">
@@ -40,7 +40,9 @@ import { admissionFee, futureNote, included, outpatient, programmes, singleRoom 
           ))}
         </tbody>
       </table>
+      </div>
 
+      <div class="price-extra">
       <div class="price-detail">
         <h3>Окремо, один раз при поступленні</h3>
         <p>Консультації невролога і лікаря ФРМ, по&nbsp;{admissionFee}. У стаціонарі вони оплачуються обов’язково, окремим платежем.</p>
@@ -56,6 +58,7 @@ import { admissionFee, futureNote, included, outpatient, programmes, singleRoom 
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </div>
 

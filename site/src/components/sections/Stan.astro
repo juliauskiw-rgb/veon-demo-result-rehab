@@ -1,12 +1,13 @@
 ---
 import Section from "../Section.astro";
+import BlockHead from "../BlockHead.astro";
 import Channels from "../Channels.astro";
 import FutureLink from "../FutureLink.astro";
 import { futureNote, situations } from "../../data/site";
 ---
 <Section id="stan" class="stan" rec="R-UX03,R-UX04">
   <div class="container">
-    <h2>З чим ви звернулись</h2>
+    <BlockHead num="01" name="Напрямки" title="З чим ви звернулись" lead="Оберіть ситуацію, щоб побачити, з чим працює центр." />
     <div class="stan__list">
       {situations.map((s, i) => (
         <>

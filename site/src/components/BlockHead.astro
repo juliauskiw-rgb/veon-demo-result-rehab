@@ -1,0 +1,12 @@
+---
+// One head for every block: number, section name, H2, one lead line. Always on the same grid position.
+interface Props { num: string; name: string; title: string; lead: string; }
+const { num, name, title, lead } = Astro.props;
+---
+<div class="block-head">
+  <h2>{title}</h2>
+  <div class="block-head__side">
+    <p class="block-head__tag"><span>{num}</span> <span>{name}</span></p>
+    <p class="block-head__lead">{lead}</p>
+  </div>
+</div>

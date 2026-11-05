@@ -92,3 +92,26 @@ if (heroActions && bar && "IntersectionObserver" in window) {
     bar.classList.toggle("is-shown", !entry.isIntersecting && entry.boundingClientRect.top < 0);
   }).observe(heroActions);
 }
+
+// Current section in the header: a thin band in the middle of the screen decides which block is active.
+const navLinks = [...document.querySelectorAll<HTMLAnchorElement>(".site-nav__links a")];
+const sectionsById = navLinks
+  .map((a) => document.querySelector<HTMLElement>(a.getAttribute("href") ?? ""))
+  .filter((el): el is HTMLElement => el !== null);
+const firstScreen = document.querySelector("#top");
+if (sectionsById.length && "IntersectionObserver" in window) {
+  const mark = (id: string | null) => {
+    for (const a of navLinks) {
+      if (a.getAttribute("href") === `#${id}`) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
+    }
+  };
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) if (e.isIntersecting) mark(e.target.id);
+    },
+    { rootMargin: "-45% 0px -54% 0px" },
+  );
+  sectionsById.forEach((el) => io.observe(el));
+  if (firstScreen) io.observe(firstScreen);
+}

@@ -2,17 +2,40 @@
 import Section from "../Section.astro";
 import DayStrip from "../DayStrip.astro";
 import Channels from "../Channels.astro";
-import { contacts, programmes } from "../../data/site";
+import { contacts, dayPrice, included, programmes } from "../../data/site";
 const first = programmes[0];
 const last = programmes[programmes.length - 1];
+const terms = included.map((x, i) => (i === 0 ? x.term : x.term.toLowerCase())).join(", ");
 ---
 <Section id="top" class="hero" rec="R-UX01,R-UX02,R-UX12,G-R003">
   <div class="container hero__in">
-    <h1 class="hero__title"><span>Реабілітація після інсульту</span> <span><span class="hero__nowrap">в Києві —</span> <span class="hero__nowrap">день за днем</span></span></h1>
-    <p class="hero__lead">Центр Result: стаціонар із цілодобовим доглядом. Заняття, кімната й харчування входять у ціну доби.</p>
-    <div class="hero__actions" data-hero-actions>
-      <Channels />
-      <a class="hero__address" href={contacts.map} target="_blank" rel="noopener noreferrer">{contacts.addressShort}</a>
+    <div class="hero__grid">
+      <div class="hero__main">
+        <h1 class="hero__title"><span>Реабілітація після інсульту</span> <span><span class="hero__nowrap">в Києві —</span> <span class="hero__nowrap">день за днем</span></span></h1>
+        <p class="hero__lead">Центр Result: стаціонар із цілодобовим доглядом. Заняття, кімната й харчування входять у ціну доби.</p>
+        <div class="hero__actions" data-hero-actions><Channels /></div>
+      </div>
+      <aside class="brief" aria-label="Коротко">
+        <figcaption class="brief__title">Коротко</figcaption>
+        <dl>
+          <div class="brief__row">
+            <dt>Ціна доби</dt>
+            <dd><a class="brief__price" href="#vartist">{dayPrice}</a></dd>
+          </div>
+          <div class="brief__row">
+            <dt>Що входить</dt>
+            <dd>{terms}</dd>
+          </div>
+          <div class="brief__row">
+            <dt>Адреса</dt>
+            <dd><a href={contacts.map} target="_blank" rel="noopener noreferrer">{contacts.addressShort}</a></dd>
+          </div>
+          <div class="brief__row">
+            <dt>Телефон</dt>
+            <dd><a href={contacts.phoneHref}>{contacts.phoneText}</a></dd>
+          </div>
+        </dl>
+      </aside>
     </div>
     <div class="hero__days">
       <DayStrip filled={1} variant="hero" />

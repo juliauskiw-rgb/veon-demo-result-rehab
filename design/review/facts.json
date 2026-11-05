@@ -1,6 +1,6 @@
 {
-  "start_url": "http://127.0.0.1:4392/",
-  "captured_at": "2026-11-05T14:35:52.522Z",
+  "start_url": "http://127.0.0.1:4396/",
+  "captured_at": "2026-11-05T15:16:16.028Z",
   "browser": "156.0.8078.80",
   "site": {
     "/robots.txt": {
@@ -19,16 +19,16 @@
       "x-frame-options": null,
       "permissions-policy": null
     },
-    "server": null
+    "server": "SimpleHTTP/0.6 Python/3.13.7"
   },
   "pages": [
     {
-      "url": "http://127.0.0.1:4392/",
+      "url": "http://127.0.0.1:4396/",
       "slug": "home",
       "desktop": {
         "status": 200,
-        "final_url": "http://127.0.0.1:4392/",
-        "load_ms_approx": 1631,
+        "final_url": "http://127.0.0.1:4396/",
+        "load_ms_approx": 1641,
         "console_errors": [],
         "title": "Реабілітація після інсульту в Києві, стаціонар | Result",
         "description": "Центр Result у Києві: стаціонар із цілодобовим доглядом, заняття й харчування. Доба — 6 250 грн. Склад ціни, команда, контакти.",
@@ -41,7 +41,7 @@
         ],
         "headings_count": {
           "h2": 5,
-          "h3": 14
+          "h3": 17
         },
         "og": {
           "title": true,
@@ -53,10 +53,10 @@
         "images": 5,
         "images_without_alt": 0,
         "forms": 0,
-        "tel_links": 12,
+        "tel_links": 13,
         "mailto_links": 2,
         "messenger_links": 8,
-        "words": 437,
+        "words": 501,
         "horizontal_overflow_px": 0,
         "trackers": [],
         "screens": {
@@ -70,14 +70,14 @@
             "screens\\home-desktop-s05.png",
             "screens\\home-desktop-s06.png"
           ],
-          "page_height_px": 6732,
+          "page_height_px": 6206,
           "full_cropped": false
         }
       },
       "mobile": {
         "status": 200,
-        "final_url": "http://127.0.0.1:4392/",
-        "load_ms_approx": 1635,
+        "final_url": "http://127.0.0.1:4396/",
+        "load_ms_approx": 1633,
         "console_errors": [],
         "title": "Реабілітація після інсульту в Києві, стаціонар | Result",
         "description": "Центр Result у Києві: стаціонар із цілодобовим доглядом, заняття й харчування. Доба — 6 250 грн. Склад ціни, команда, контакти.",
@@ -90,7 +90,7 @@
         ],
         "headings_count": {
           "h2": 5,
-          "h3": 14
+          "h3": 17
         },
         "og": {
           "title": true,
@@ -102,10 +102,10 @@
         "images": 5,
         "images_without_alt": 0,
         "forms": 0,
-        "tel_links": 12,
+        "tel_links": 13,
         "mailto_links": 2,
         "messenger_links": 8,
-        "words": 423,
+        "words": 487,
         "horizontal_overflow_px": 0,
         "screens": {
           "fold": "screens\\home-mobile-fold.png",
@@ -118,7 +118,7 @@
             "screens\\home-mobile-s05.png",
             "screens\\home-mobile-s06.png"
           ],
-          "page_height_px": 8482,
+          "page_height_px": 8645,
           "full_cropped": false
         }
       }
