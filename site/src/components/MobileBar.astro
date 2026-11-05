@@ -1,0 +1,8 @@
+---
+import { contacts } from "../data/site";
+---
+<aside class="mobile-bar" aria-label="Швидкий зв’язок">
+  <a class="btn btn--call" href={contacts.phoneHref}>Подзвонити</a>
+  <a class="btn btn--line" href={contacts.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
+  <a class="btn btn--line" href={contacts.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+</aside>

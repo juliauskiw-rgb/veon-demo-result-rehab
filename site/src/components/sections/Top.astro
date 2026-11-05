@@ -1,0 +1,25 @@
+---
+import Section from "../Section.astro";
+import DayStrip from "../DayStrip.astro";
+import Channels from "../Channels.astro";
+import { contacts, programmes } from "../../data/site";
+const first = programmes[0];
+const last = programmes[programmes.length - 1];
+---
+<Section id="top" class="hero" rec="R-UX01,R-UX02,R-UX12,G-R003">
+  <div class="container hero__in">
+    <h1 class="hero__title"><span>Реабілітація після інсульту</span> <span><span class="hero__nowrap">в Києві —</span> <span class="hero__nowrap">день за днем</span></span></h1>
+    <p class="hero__lead">Центр Result: стаціонар із цілодобовим доглядом. Заняття, кімната й харчування входять у ціну доби.</p>
+    <div class="hero__actions" data-hero-actions>
+      <Channels />
+      <a class="hero__address" href={contacts.map} target="_blank" rel="noopener noreferrer">{contacts.addressShort}</a>
+    </div>
+    <div class="hero__days">
+      <DayStrip filled={1} variant="hero" />
+      <p class="hero__facts">
+        <a href="#vartist">{first.label} — {first.sum}</a>
+        <a href="#vartist">{last.label} — {last.sum}</a>
+      </p>
+    </div>
+  </div>
+</Section>

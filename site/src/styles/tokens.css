@@ -1,0 +1,63 @@
+/* Hallmark · shape: custom · genre: modern-minimal · theme: custom · job: book · idea: "Result не обещает результат, а показывает, из чего он складывается, — из дней: единица всего сайта — оплаченная доба и её содержимое" · vibe: "дневной свет, крупная речь, честный счёт"
+ * paper: #8DC5FE · accent: #26326E · display: Arsenal · body: Commissioner · hero: заголовок на всю ширину на голубом поле, полоса 30 суток · nav: закреплённая тёмная шапка с номером · footer: тёмный, контакты и лицензия · imagery: client photos · signature: цена в клетках суток
+ * axes: mid/grotesk-sans/cool · posture: committed · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: imagery, снимки низкого разрешения показаны не шире исходника и только как лица команды */
+/* Hallmark · waive 39b · a.btn 56 and 60px · older visitors and stroke patients with impaired motor control need larger touch targets, set by concept section 8.5 */
+/* Hallmark · waive 23 · #8DC5FE field on top and kontakty · declared surface colour under the committed posture: the brand sky blue is the page field per concept section 5, it is not an accent */
+/* Line 1 of this file is the Hallmark stamp (docs/process/hallmark.md). Client design tokens from design/concept.md. */
+:root {
+  /* Colour: veon-concept */
+  --color-field: #8DC5FE;
+  --color-primary: #26326E;
+  --color-text: #141B4A;
+  --color-bg: #F5F6FF;
+  --color-surface: #D8EBFF;
+  --color-text-muted: #3E4A80;
+  --color-on-primary: #F5F6FF;
+  --color-accent: var(--color-primary);
+  --ring: var(--color-text);
+
+  /* Type */
+  --font-display: "Arsenal", Georgia, serif;
+  --font-body: "Commissioner", system-ui, sans-serif;
+  --text-display: clamp(2.25rem, 11.2vw, 4.5rem);
+  --text-section: clamp(2rem, 9.3vw, 2.75rem);
+  --text-large: clamp(1.875rem, 1.4rem + 1.2vw, 2.5rem);
+  --text-name: clamp(1.5rem, 1.3rem + .5vw, 1.75rem);
+  --text-lead: clamp(1.3125rem, 1.2rem + .35vw, 1.5rem);
+  --text-body: clamp(1.1875rem, 1.15rem + .1vw, 1.25rem);
+  --text-small: 1.125rem;
+
+  /* Grid: 30 columns, the strip of days is the page grid */
+  --container: 1280px;
+  --space: clamp(1.5rem, 5.5vw, 5rem);
+  --gap: 8px;
+  --cell-radius: 3px;
+  --cell-line: 1.5px;
+
+  /* Rhythm */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 40px;
+  --s5: 64px;
+  --s6: 96px;
+  --s7: 144px;
+  --section-pad: clamp(4rem, 2rem + 8vw, 9rem);
+
+  /* Shape and motion */
+  --radius: 6px;
+  --header-h: 64px;
+  --bar-h: 72px;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur: 700ms;
+  --dur-short: 220ms;
+  --dur-micro: 200ms;
+}
+@media (min-width: 60rem) {
+  :root {
+    --text-display: clamp(4.5rem, 7.5vw, 6.75rem);
+    --text-section: clamp(2.75rem, 1.2rem + 3.4vw, 4rem);
+    --header-h: 72px;
+  }
+}

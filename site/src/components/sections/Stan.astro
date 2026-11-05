@@ -1,0 +1,29 @@
+---
+import Section from "../Section.astro";
+import Channels from "../Channels.astro";
+import FutureLink from "../FutureLink.astro";
+import { futureNote, situations } from "../../data/site";
+---
+<Section id="stan" class="stan" rec="R-UX03,R-UX04">
+  <div class="container">
+    <h2>З чим ви звернулись</h2>
+    <div class="stan__list">
+      {situations.map((s, i) => (
+        <>
+          <h3 class="sit__title">
+            <button class="sit__btn" type="button" data-sit aria-expanded={i === 0 ? "true" : "false"} aria-controls={`sit-${s.id}`}>
+              <span class="sit__mark" aria-hidden="true"></span>
+              <span>{s.title}</span>
+            </button>
+          </h3>
+          <div id={`sit-${s.id}`} class:list={["sit__panel", { "is-open": i === 0 }]}>
+            <p>{s.text}</p>
+            <FutureLink note={futureNote}>{s.more}</FutureLink>
+            <Channels only="call" />
+          </div>
+        </>
+      ))}
+    </div>
+    <p class="stan__statement">Ми не розділяємо пацієнтів на складні та прості випадки</p>
+  </div>
+</Section>

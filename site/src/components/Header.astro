@@ -1,0 +1,23 @@
+---
+import FutureLink from "./FutureLink.astro";
+import Logo from "./Logo.astro";
+import { anchors, contacts, futureNote } from "../data/site";
+---
+<header class="site-header on-dark">
+  <div class="container site-header__row">
+    <Logo href="#top" />
+    <a class="site-header__tel" href={contacts.phoneHref}>{contacts.phoneText}</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+    <nav id="site-nav" class="site-nav" aria-label="Основна навігація">
+      <ul class="site-nav__links">
+        {anchors.map((a) => <li><a href={a.href}>{a.label}</a></li>)}
+      </ul>
+      <div class="site-nav__contact">
+        <a class="site-nav__tel" href={contacts.phoneHref}>{contacts.phoneText}</a>
+        <a href={contacts.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href={contacts.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <span class="lang"><span aria-current="true">UA</span> <FutureLink note={futureNote} class="future-link--end">RU</FutureLink></span>
+      </div>
+    </nav>
+  </div>
+</header>

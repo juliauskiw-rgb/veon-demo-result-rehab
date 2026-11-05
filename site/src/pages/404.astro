@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import Channels from "../components/Channels.astro";
+---
+<Base lang="uk" title="Сторінку не знайдено | Result" description="Такої сторінки немає. Поверніться на головну або зв’яжіться з центром Result.">
+  <section class="not-found">
+    <div class="container">
+      <h1>Такої сторінки немає</h1>
+      <p class="hero__lead">Поверніться на <a href="/">головну</a> або зв’яжіться з центром.</p>
+      <Channels />
+    </div>
+  </section>
+  <Footer slot="footer" logoHref="/" />
+</Base>

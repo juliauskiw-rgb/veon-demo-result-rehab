@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MobileBar from "../components/MobileBar.astro";
+import Top from "../components/sections/Top.astro";
+import Stan from "../components/sections/Stan.astro";
+import Vartist from "../components/sections/Vartist.astro";
+import Shlyah from "../components/sections/Shlyah.astro";
+import Komanda from "../components/sections/Komanda.astro";
+import Kontakty from "../components/sections/Kontakty.astro";
+
+const title = "Реабілітація після інсульту в Києві, стаціонар | Result";
+const description = "Центр Result у Києві: стаціонар із цілодобовим доглядом, заняття й харчування. Доба — 6 250 грн. Склад ціни, команда, контакти.";
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: "Result",
+  telephone: "+380631041133",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "вул. Михайла Дерегуса, 42",
+    addressLocality: "Київ",
+    addressCountry: "UA",
+  },
+};
+---
+<Base lang="uk" title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <Header slot="header" />
+  <Top />
+  <Stan />
+  <Vartist />
+  <Shlyah />
+  <Komanda />
+  <Kontakty />
+  <Footer slot="footer" />
+  <MobileBar slot="footer" />
+</Base>

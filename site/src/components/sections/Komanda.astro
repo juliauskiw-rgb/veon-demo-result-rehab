@@ -1,0 +1,24 @@
+---
+import Section from "../Section.astro";
+import FutureLink from "../FutureLink.astro";
+import { futureNote, team } from "../../data/site";
+---
+<Section id="komanda" class="komanda" rec="R-UX09">
+  <div class="container">
+    <h2>Хто працюватиме з вами</h2>
+    <ul class="team">
+      {team.map((m) => (
+        <li class="person">
+          <picture>
+            <source srcset={`/images/${m.photo}.avif`} type="image/avif" />
+            <source srcset={`/images/${m.photo}.webp`} type="image/webp" />
+            <img src={`/images/${m.photo}.jpg`} width="292" height="365" loading="lazy" decoding="async" alt={`Портрет: ${m.name}`} />
+          </picture>
+          <h3>{m.name}</h3>
+          <p>{m.role}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="komanda__more"><FutureLink note={futureNote}>Вся команда</FutureLink></p>
+  </div>
+</Section>

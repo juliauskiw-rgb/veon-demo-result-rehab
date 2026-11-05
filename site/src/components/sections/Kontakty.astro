@@ -1,0 +1,20 @@
+---
+import Section from "../Section.astro";
+import { contacts } from "../../data/site";
+---
+<Section id="kontakty" class="kontakty">
+  <div class="container kontakty__in">
+    <h2>Зв’язатися з центром</h2>
+    <a class="kontakty__phone" href={contacts.phoneHref}>{contacts.phoneText}</a>
+    <div class="channels kontakty__channels">
+      <a class="btn btn--call kontakty__call" href={contacts.phoneHref}>Подзвонити</a>
+      <a class="btn btn--line" href={contacts.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a class="btn btn--line" href={contacts.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+    <p class="kontakty__facts">
+      <a href={contacts.map} target="_blank" rel="noopener noreferrer">{contacts.addressShort}</a>
+      <span>ЖК ParkLand</span>
+      <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+    </p>
+  </div>
+</Section>

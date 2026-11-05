@@ -1,0 +1,11 @@
+---
+// The signature: 30 cells, one per paid day of inpatient stay. Decorative: the data is always in text nearby.
+interface Props { filled: number; variant?: "hero" | "row"; animate?: boolean; index?: number; }
+const { filled, variant = "row", animate = false, index = 0 } = Astro.props;
+const empty = Array.from({ length: 30 });
+const full = Array.from({ length: filled });
+---
+<span class:list={["strip", `strip--${variant}`]} aria-hidden="true" data-fill={animate ? "" : undefined} style={`--i:${index}`}>
+  <span class="strip__grid">{empty.map(() => <span class="cell" />)}</span>
+  <span class="strip__grid strip__fill">{full.map(() => <span class="cell cell--on" />)}</span>
+</span>

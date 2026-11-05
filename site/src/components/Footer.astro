@@ -1,0 +1,33 @@
+---
+import FutureLink from "./FutureLink.astro";
+import Logo from "./Logo.astro";
+import { contacts, footerSections, futureNote, licence, socials } from "../data/site";
+interface Props { logoHref?: string; }
+const { logoHref = "#top" } = Astro.props;
+---
+<footer class="site-footer on-dark">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <Logo href={logoHref} />
+      <p>{licence}</p>
+    </div>
+    <div class="site-footer__contact">
+      <p class="site-footer__title">Контакти</p>
+      <ul>
+        <li><a href={contacts.phoneHref}>{contacts.phoneText}</a></li>
+        <li><a href={`mailto:${contacts.email}`}>{contacts.email}</a></li>
+        <li><a href={contacts.map} target="_blank" rel="noopener noreferrer">{contacts.addressShort}</a> (ЖК ParkLand)</li>
+      </ul>
+      <ul class="site-footer__social">
+        {socials.map((s) => <li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a></li>)}
+      </ul>
+    </div>
+    <div class="site-footer__sections">
+      <p class="site-footer__title">Розділи</p>
+      <ul>
+        {footerSections.map((s) => <li><FutureLink note={futureNote}>{s}</FutureLink></li>)}
+        <li><a href={logoHref === "#top" ? "#vartist" : "/#vartist"}>Ціни</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
